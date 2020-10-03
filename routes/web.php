@@ -26,8 +26,6 @@ Route::get('/', [PageController::class, 'homepage']);
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
-<<<<<<< HEAD
-=======
 
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
@@ -35,4 +33,3 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::prefix('admin')->name('admin.')->middleware('can:manage-users')->group(function () {
     Route::resource('/users', UsersController::class)->except(['show', 'create', 'store']);
 });
->>>>>>> 87948fce5f9c4f6d44d4681f31667d97b4a0dbc7
